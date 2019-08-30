@@ -1,3 +1,4 @@
+import { GalleryModule } from './gallery/gallery.module';
 import { CoreModule } from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -15,7 +16,8 @@ import { MaterialModule } from './material.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    CoreModule
+    CoreModule,
+    GalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent]
