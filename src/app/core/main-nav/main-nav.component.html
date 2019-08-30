@@ -1,0 +1,106 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="isPannelOpen">
+    <mat-toolbar class="tdmMenu">
+      <h2 style="text-align:center">Go to</h2>
+    </mat-toolbar>
+    <mat-nav-list>
+
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="panel === 0" (opened)="setPanel(0)">
+          <mat-expansion-panel-header class="accordion-title">
+            <mat-panel-title matSubheader>
+              <mat-icon>search</mat-icon><span class="nav-caption">Tab 1</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <a  mat-list-item>
+            <span class="nav-text-caption">A</span>
+          </a>
+          <a mat-list-item="/u2searchview">
+            <span class="nav-text-caption">b</span>
+          </a>
+          <a  mat-list-item>
+            <span class="nav-text-caption">c</span>
+          </a>
+          <a mat-list-item>
+            <span class="nav-text-caption">d</span>
+          </a>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-divider></mat-divider>
+
+
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="panel === 1" (opened)="setPanel(1)">
+          <mat-expansion-panel-header>
+            <mat-panel-title matSubheader class="accordion-title">
+              <mat-icon>layers</mat-icon><span class="nav-caption">Tab 2</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <a  mat-list-item>
+            <span class="nav-text-caption">a</span>
+          </a>
+        </mat-expansion-panel>
+      </mat-accordion> 
+      <mat-divider></mat-divider>
+
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="panel === 2" (opened)="setPanel(2)">
+          <mat-expansion-panel-header>
+            <mat-panel-title matSubheader>
+              <mat-icon>confirmation_number</mat-icon><span class="nav-caption">Tab 3</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <a  mat-list-item>
+            <span class="nav-text-caption">A</span>
+          </a>
+          <a  mat-list-item>
+            <span class="nav-text-caption">B</span>
+          </a>
+        </mat-expansion-panel>
+      </mat-accordion> 
+
+      <!--<a mat-list-item href="#">search and reserve data</a>
+      <a mat-list-item href="#">create data</a>
+      <a mat-list-item href="#">request for data</a>-->
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <div class="title-center">
+          <h4>MEMISTAN</h4>
+        </div>
+        <div class="title-right">
+          <button mat-button ><a href="https://www.google.com" target="_blank">About</a></button>
+          <button mat-button><a href="https://www.google.com" target="_blank">FAQ's</a></button>
+          <button mat-button [matMenuTriggerFor]="menu">Contact Us</button>
+        </div>
+        <mat-menu #menu="matMenu">
+          <div mat-menu-item class="contact">
+            <p class="mat-headline">Test</p>
+            <p class="mat-title">Test 2</p>
+            <div>
+            <label>contact:</label><br>
+            <a href="#">abhinesh.gour@gmail.com</a>
+          </div>
+          <div>
+            <label>slack channel:</label><br>
+            <a href="#" target="_blank">http://isPannelOpen</a></div>
+          </div>
+        </mat-menu>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
