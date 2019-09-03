@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-gallery-home',
   templateUrl: './gallery-home.component.html',
